@@ -1,0 +1,31 @@
+<h1>Contact List</h1>
+
+<div *ngFor="let contact of contacts">
+  <p>
+    ID: {{ contact.id }}
+    <br />
+    Name: {{ contact.name }}
+    <br />
+    Email: {{ contact.email }}
+    <br />
+    Contact Number: {{ contact.contactNumber }}
+    <br />
+    <button (click)="viewContact(contact)">View</button>
+    <button (click)="updateContact(contact)">Update</button>
+    <button (click)="deleteContact(contact)">Delete</button>
+  </p>
+</div>
+
+<hr />
+
+<h2>Add New Contact</h2>
+
+<label>Name:</label>
+<input type="text" [(ngModel)]="newContact.name" />
+
+<label>Email:</label>
+<input type="text" [(ngModel)]="newContact.email" />
+
+<label>Contact Number:</label>
+<input type="text" [(ngModel)]="newContact.contactNumber" />
+<button (click)="addContact()">Add Contact</button>
